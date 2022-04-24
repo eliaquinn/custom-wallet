@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    height: 100vh;
+}
+
+.btn {
+    height: 30px;
+    width: 100px;
+    background: #202020;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.positive {
+    background: #E5FFD9;
+}
+
+.negative {
+    background: #FFDBD9;
+}
+
+.wallet {
+    margin-top: 50px;
+}
+
+.wallet .status-bar {
+    display: flex;
+    padding: 0 15px;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    width: 450px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.wallet .status-bar .status-balance {
+    display: flex;
+    align-items: center;
+}
+
+.wallet .status-bar .status-balance i {
+    font-size: 30pt;
+    margin-right: 10px;
+    color: #202020;
+}
+
+.wallet .status-bar .status-balance .balance {
+    width: 110px;
+}
+
+.wallet .status-bar .status-balance .balance span {
+    font-size: 11pt;
+    font-weight: 500;
+}
+
+.wallet .status-bar .status-balance .balance h3 {
+    font-size: 14pt;
+    font-weight: 300;
+}
+
+.add-resource {
+    display: flex;
+    padding: 0 15px;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    width: 450px;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.add-resource input {
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 5px;
+    margin-right: 10px;
+}
+
+.add-resource input:nth-child(1) {
+    width: 60%;
+}
+
+.add-resource input:nth-child(2) {
+    width: 65px;
+}
+
+.transactions-recents {
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.transactions-recents .more {
+    text-align: right;
+}
+
+.transactions-recents .more a {
+    font-size: 11pt;
+}
+
+.transactions-recents .resource {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 5px;
+    margin-bottom: 5px;
+}
+
+.transactions-recents .resource span {
+    font-size: 11pt;
+}
+
+.transactions-recents .resource .cash {
+    display: flex;
+    align-items: center;
+}
+
+.transactions-recents .resource .cash h3 {
+    font-size: 12pt;
+    font-weight: 300;
+    margin-right: 5px;
+}
+
+.transactions-recents .resource .cash i {
+    cursor: pointer;
+}
