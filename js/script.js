@@ -1,23 +1,27 @@
-class Wallet {
-    constructor () {
-        this.elementArr = []
-    }
+const inputDesc = document.getElementById('description')
+const inputCash = document.getElementById('cash')
+const buttonAdd = document.getElementById('add')
 
-    addElement (element) {
-        this.elementArr.push(element)
+const template = document.querySelector('.recents')
 
-        this.validateInputs()
-    }
+const addResource = () => {
+    buttonAdd.addEventListener('click', () => {
+        if(inputCash.value !== '' && inputDesc.value !== '') {
+            let insertRecents = `
+            <div class="resource positive">
+                <span>${inputDesc.value}</span>
+                <div class="cash">
+                    <h3>R$ ${inputCash.value}</h3>
+                    <i class='bx bx-trash' ></i>
+                </div>
+            </div>
+            `
 
-    validateInputs () {
-        this.elementArr.forEach(data => {
-            
-        })
-    }
+            template.innerHTML += insertRecents
+        }
+        return
+    })
 }
 
-const allInputs = document.querySelectorAll('.inputs')
 
-const client = new Wallet()
-
-client.addElement(allInputs)
+addResource()
