@@ -16,6 +16,11 @@ class Wallet {
     insertData (arr) {
         
         let cash  = arr.filter(negative => negative.id == 'cash').pop('cash')
+        let paragraph = this.arrElements[3].querySelector('p')
+
+        if(paragraph.classList.contains('active')) {
+            paragraph.classList.remove('active')
+        }
 
         if(arr[0].value == '' || arr[1].value == '') {
             alert('Prencha os todos os campos antes de adicionar-los')
@@ -32,7 +37,10 @@ class Wallet {
                 </div>
             </div>
             `
+            arr[0].value = ''
+            arr[1].value = ''
             this.arrElements[3].innerHTML += resource
+            
             return
         }
 
@@ -45,6 +53,8 @@ class Wallet {
                 </div>
             </div>
             `
+            arr[0].value = ''
+            arr[1].value = ''
         this.arrElements[3].innerHTML += resource
     }
 
@@ -55,11 +65,8 @@ class Wallet {
     }
 
     init () {
-        if(this.arrElements[3].classList.contains('active'))  this.arrElements[3].innerHTML = `<p>Nenhuma atividade recente registrada</p>`
-        
         this.arrElements.forEach(data => {
             if(data.id == 'add') {
-                this.arrElements[3].classList.remove('active')
                 data.addEventListener('click', this.validateInputs.bind(this))
             }
             return
@@ -78,5 +85,3 @@ wallet.insertElement(buttonAdd)
 wallet.insertElement(template)
 
 wallet.init()
-
-console.log(wallet)
