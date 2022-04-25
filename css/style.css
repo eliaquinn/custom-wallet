@@ -120,7 +120,13 @@ body {
     font-size: 11pt;
 }
 
-.transactions-recents .resource {
+.transactions-recents .recents p {
+    font-size: 10pt;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.transactions-recents .recents .resource {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,21 +136,21 @@ body {
     margin-bottom: 5px;
 }
 
-.transactions-recents .resource span {
+.transactions-recents .recents .resource span {
     font-size: 11pt;
 }
 
-.transactions-recents .resource .cash {
+.transactions-recents .recents .resource .cash {
     display: flex;
     align-items: center;
 }
 
-.transactions-recents .resource .cash h3 {
+.transactions-recents .recents .resource .cash h3 {
     font-size: 12pt;
     font-weight: 300;
     margin-right: 5px;
 }
 
-.transactions-recents .resource .cash i {
+.transactions-recents .recents .resource .cash i {
     cursor: pointer;
 }
