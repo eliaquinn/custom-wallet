@@ -33,7 +33,7 @@ class Wallet {
 
         if(dataStorage == null) return
 
-        dataStorage.forEach(({description, value}) => {
+        dataStorage.forEach(({id, description, value}) => {
             let isNegative = value[0] == '-'
             if(isNegative) {
                 let resource = `
@@ -41,7 +41,7 @@ class Wallet {
                         <span>${description}</span>
                         <div class="cash">
                             <h3>R$ ${value}</h3>
-                            <i class='bx bx-trash' ></i>
+                            <i onclick="deleteItem(this)" class='bx bx-trash' data-id="${id}"></i>
                         </div>
                     </div>
                     `
@@ -54,7 +54,7 @@ class Wallet {
                     <span>${description}</span>
                     <div class="cash">
                         <h3>R$ ${value}</h3>
-                        <i class='bx bx-trash' ></i>
+                        <i onclick="deleteItem(this)" class='bx bx-trash' data-id="${id}"></i>
                     </div>
                 </div>
                 `
@@ -64,9 +64,9 @@ class Wallet {
 
     addLocalStorage(objectArr) {
         const values = objectArr.map(arr => arr.value)
-
+        
         const resources = [
-            {description: values[0], value: values[1]}
+            {id: crypto.randomUUID() ,description: values[0], value: values[1]}
         ]
 
         let isEmpty = localStorage.length <= 0
@@ -105,8 +105,14 @@ class Wallet {
             return
         })
     }
+}
 
-    
+
+const deleteItem = (id) => {
+    const arr = JSON.parse(localStorage.getItem('resources'))
+    const found = arr.find(data => data.id == id.dataset.id)
+
+    console.log(arr)
 }
 
 const wallet = new Wallet()
